@@ -1,0 +1,587 @@
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.11)  30 OCT 2024 14:54
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**abbe_imaging.tex
+(./abbe_imaging.tex
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-09-10>
+
+./abbe_imaging.tex:262: LaTeX Error: Environment figure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.262 \begin{figure}
+                    [ht]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./abbe_imaging.tex:262: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.262 \begin{figure}[
+                     ht]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+
+./abbe_imaging.tex:264: LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.264   \begin{subfigure}
+                         [b]{0.45\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no b ("62) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+./abbe_imaging.tex:264: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.264   \begin{subfigure}[b]{0.45\textwidth}
+                                            
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./abbe_imaging.tex:264: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.264   \begin{subfigure}[b]{0.45\textwidth}
+                                            
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./abbe_imaging.tex:266: Undefined control sequence.
+l.266     \includegraphics
+                          [height=5cm]{./photos/阿贝成像（光路图）.jpg}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no / ("2F) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no / ("2F) in font nullfont!
+Missing character: There is no 阿 ("963F) in font nullfont!
+Missing character: There is no 贝 ("8D1D) in font nullfont!
+Missing character: There is no 成 ("6210) in font nullfont!
+Missing character: There is no 像 ("50CF) in font nullfont!
+Missing character: There is no （ ("FF08) in font nullfont!
+Missing character: There is no 光 ("5149) in font nullfont!
+Missing character: There is no 路 ("8DEF) in font nullfont!
+Missing character: There is no 图 ("56FE) in font nullfont!
+Missing character: There is no ） ("FF09) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no j ("6A) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+
+./abbe_imaging.tex:267: LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.267     \caption
+                  {阿贝成像（光路图）}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 阿 ("963F) in font nullfont!
+Missing character: There is no 贝 ("8D1D) in font nullfont!
+Missing character: There is no 成 ("6210) in font nullfont!
+Missing character: There is no 像 ("50CF) in font nullfont!
+Missing character: There is no （ ("FF08) in font nullfont!
+Missing character: There is no 光 ("5149) in font nullfont!
+Missing character: There is no 路 ("8DEF) in font nullfont!
+Missing character: There is no 图 ("56FE) in font nullfont!
+Missing character: There is no ） ("FF09) in font nullfont!
+
+./abbe_imaging.tex:269: LaTeX Error: \begin{document} ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.269   \end{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./abbe_imaging.tex:271: LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.271   \begin{subfigure}
+                         [b]{0.45\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no b ("62) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+./abbe_imaging.tex:271: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.271   \begin{subfigure}[b]{0.45\textwidth}
+                                            
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./abbe_imaging.tex:271: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.271   \begin{subfigure}[b]{0.45\textwidth}
+                                            
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./abbe_imaging.tex:273: Undefined control sequence.
+l.273     \includegraphics
+                          [height=5cm]{./photos/光字（无滤波器）.jpg}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no / ("2F) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no / ("2F) in font nullfont!
+Missing character: There is no 光 ("5149) in font nullfont!
+Missing character: There is no 字 ("5B57) in font nullfont!
+Missing character: There is no （ ("FF08) in font nullfont!
+Missing character: There is no 无 ("65E0) in font nullfont!
+Missing character: There is no 滤 ("6EE4) in font nullfont!
+Missing character: There is no 波 ("6CE2) in font nullfont!
+Missing character: There is no 器 ("5668) in font nullfont!
+Missing character: There is no ） ("FF09) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no j ("6A) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+
+./abbe_imaging.tex:274: LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.274     \caption
+                  {光字（无滤波器）}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 光 ("5149) in font nullfont!
+Missing character: There is no 字 ("5B57) in font nullfont!
+Missing character: There is no （ ("FF08) in font nullfont!
+Missing character: There is no 无 ("65E0) in font nullfont!
+Missing character: There is no 滤 ("6EE4) in font nullfont!
+Missing character: There is no 波 ("6CE2) in font nullfont!
+Missing character: There is no 器 ("5668) in font nullfont!
+Missing character: There is no ） ("FF09) in font nullfont!
+
+./abbe_imaging.tex:276: LaTeX Error: \begin{document} ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.276   \end{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./abbe_imaging.tex:278: LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278 \end{figure}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 262--279
+[]
+ []
+
+
+./abbe_imaging.tex:280: LaTeX Error: Environment figure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.280 \begin{figure}
+                    [ht]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./abbe_imaging.tex:280: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.280 \begin{figure}[
+                     ht]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+
+./abbe_imaging.tex:282: LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.282   \begin{subfigure}
+                         [b]{0.45\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no b ("62) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+./abbe_imaging.tex:282: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.282   \begin{subfigure}[b]{0.45\textwidth}
+                                            
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./abbe_imaging.tex:282: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.282   \begin{subfigure}[b]{0.45\textwidth}
+                                            
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./abbe_imaging.tex:284: Undefined control sequence.
+l.284     \includegraphics
+                          [height=5cm]{./photos/阿贝成像（光路图）.jpg}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no / ("2F) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no / ("2F) in font nullfont!
+Missing character: There is no 阿 ("963F) in font nullfont!
+Missing character: There is no 贝 ("8D1D) in font nullfont!
+Missing character: There is no 成 ("6210) in font nullfont!
+Missing character: There is no 像 ("50CF) in font nullfont!
+Missing character: There is no （ ("FF08) in font nullfont!
+Missing character: There is no 光 ("5149) in font nullfont!
+Missing character: There is no 路 ("8DEF) in font nullfont!
+Missing character: There is no 图 ("56FE) in font nullfont!
+Missing character: There is no ） ("FF09) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no j ("6A) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+
+./abbe_imaging.tex:285: LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.285     \caption
+                  {阿贝成像（光路图）}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 阿 ("963F) in font nullfont!
+Missing character: There is no 贝 ("8D1D) in font nullfont!
+Missing character: There is no 成 ("6210) in font nullfont!
+Missing character: There is no 像 ("50CF) in font nullfont!
+Missing character: There is no （ ("FF08) in font nullfont!
+Missing character: There is no 光 ("5149) in font nullfont!
+Missing character: There is no 路 ("8DEF) in font nullfont!
+Missing character: There is no 图 ("56FE) in font nullfont!
+Missing character: There is no ） ("FF09) in font nullfont!
+
+./abbe_imaging.tex:287: LaTeX Error: \begin{document} ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.287   \end{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./abbe_imaging.tex:289: LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.289   \begin{subfigure}
+                         [b]{0.45\textwidth}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no b ("62) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+./abbe_imaging.tex:289: Missing number, treated as zero.
+<to be read again> 
+                   }
+l.289   \begin{subfigure}[b]{0.45\textwidth}
+                                            
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./abbe_imaging.tex:289: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   }
+l.289   \begin{subfigure}[b]{0.45\textwidth}
+                                            
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+./abbe_imaging.tex:291: Undefined control sequence.
+l.291     \includegraphics
+                          [height=5cm]{./photos/光字（无滤波器）.jpg}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no / ("2F) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no / ("2F) in font nullfont!
+Missing character: There is no 光 ("5149) in font nullfont!
+Missing character: There is no 字 ("5B57) in font nullfont!
+Missing character: There is no （ ("FF08) in font nullfont!
+Missing character: There is no 无 ("65E0) in font nullfont!
+Missing character: There is no 滤 ("6EE4) in font nullfont!
+Missing character: There is no 波 ("6CE2) in font nullfont!
+Missing character: There is no 器 ("5668) in font nullfont!
+Missing character: There is no ） ("FF09) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no j ("6A) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+
+./abbe_imaging.tex:292: LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.292     \caption
+                  {光字（无滤波器）}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no 光 ("5149) in font nullfont!
+Missing character: There is no 字 ("5B57) in font nullfont!
+Missing character: There is no （ ("FF08) in font nullfont!
+Missing character: There is no 无 ("65E0) in font nullfont!
+Missing character: There is no 滤 ("6EE4) in font nullfont!
+Missing character: There is no 波 ("6CE2) in font nullfont!
+Missing character: There is no 器 ("5668) in font nullfont!
+Missing character: There is no ） ("FF09) in font nullfont!
+
+./abbe_imaging.tex:294: LaTeX Error: \begin{document} ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.294   \end{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./abbe_imaging.tex:296: LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.296 \end{figure}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 280--297
+[]
+ []
+
+)
+! Emergency stop.
+<*> abbe_imaging.tex
+                    
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 19 strings out of 474235
+ 417 string characters out of 5742252
+ 381171 words of memory out of 5000000
+ 22811 multiletter control sequences out of 15000+600000
+ 558069 words of font info for 36 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 15i,0n,20p,201b,41s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.

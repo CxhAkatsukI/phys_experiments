@@ -1,0 +1,724 @@
+% Template of basic phisics experiment 基于 article template，在此基础上做修改
+% 设定文章编码类型，正文字号为五号则 zihao=5，正文字号为小四则 zihao=-4
+\documentclass[zihao=5, UTF8]{article}		
+
+
+% 自定义宏定义
+\def\N{\mathbb{N}}
+\def\F{\mathbb{F}}
+\def\Z{\mathbb{Z}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\T{\mathbb{T}}
+\def\S{\mathbb{S}}
+\def\A{\mathbb{A}}
+\def\I{\mathscr{I}}
+\def\d{\mathrm{d}}
+\def\p{\partial}
+
+
+% 物理实验报告所需的其它宏包
+\usepackage{ulem}   % \uline 下划线支持
+
+% 导入基本宏包
+\usepackage[UTF8]{ctex}     % 设置文档为中文语言
+\usepackage[colorlinks, linkcolor=blue, anchorcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}  % 宏包：自动生成超链接 (此宏包与标题中的数学环境冲突)
+% \usepackage{docmute}    % 宏包：子文件导入时自动去除导言区，用于主/子文件的写作方式，\include{./51单片机笔记}即可。注：启用此宏包会导致.tex文件capacity受限。
+\usepackage{amsmath}    % 宏包：数学公式
+\usepackage{mathrsfs}   % 宏包：提供更多数学符号
+\usepackage{amssymb}    % 宏包：提供更多数学符号
+\usepackage{pifont}     % 宏包：提供了特殊符号和字体
+\usepackage{extarrows}  % 宏包：更多箭头符号
+
+% 列表环境设置
+\usepackage{enumitem}   % 宏包：列表环境设置
+    \setlist[enumerate]{itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt, leftmargin=3.5em} 
+    \setlist[itemize]{itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt, leftmargin=3.5em}
+    \newlist{circledenum}{enumerate}{1} % 创建一个新的枚举环境  
+    \setlist[circledenum,1]{  
+        label=\protect\circled{\arabic*}, % 使用 \arabic* 来获取当前枚举计数器的值，并用 \circled 包装它  
+        ref=\arabic*, % 如果需要引用列表项，这将决定引用格式（这里仍然使用数字）
+        itemsep=0pt, parsep=0pt, topsep=0pt, partopsep=0pt, leftmargin=3.5em
+    }  
+% 文章页面 margin 设置
+\usepackage[a4paper]{geometry}  % 宏包：文章页面 margin 设置
+    \geometry{top=0.75in}
+    \geometry{bottom=0.75in}
+    \geometry{left=0.75in}
+    \geometry{right=0.75in}   % 设置上下左右页边距
+    \geometry{marginparwidth=1.75cm}    % 设置边注距离（注释、标记等）
+
+% 自定义数学环境
+\usepackage{amsthm} % 宏包：数学环境配置
+% theorem-line 环境自定义
+    \newtheoremstyle{MyLineTheoremStyle}% <name>
+        {11pt}% <space above>
+        {11pt}% <space below>
+        {}% <body font> 使用默认正文字体
+        {}% <indent amount>
+        {\bfseries}% <theorem head font> 设置标题项为加粗
+        {：}% <punctuation after theorem head>
+        {.5em}% <space after theorem head>
+        {\textbf{#1}\thmnumber{#2}\ \ (\,\textbf{#3}\,)}% 设置标题内容顺序
+    \theoremstyle{MyLineTheoremStyle} % 应用自定义的定理样式
+    \newtheorem{LineTheorem}{Theorem.\,}
+% theorem-block 环境自定义
+    \newtheoremstyle{MyBlockTheoremStyle}% <name>
+        {11pt}% <space above>
+        {11pt}% <space below>
+        {}% <body font> 使用默认正文字体
+        {}% <indent amount>
+        {\bfseries}% <theorem head font> 设置标题项为加粗
+        {：\\ \indent}% <punctuation after theorem head>
+        {.5em}% <space after theorem head>
+        {\textbf{#1}\thmnumber{#2}\ \ (\,\textbf{#3}\,)}% 设置标题内容顺序
+    \theoremstyle{MyBlockTheoremStyle} % 应用自定义的定理样式
+    \newtheorem{BlockTheorem}[LineTheorem]{Theorem.\,} % 使用 LineTheorem 的计数器
+% definition 环境自定义
+    \newtheoremstyle{MySubsubsectionStyle}% <name>
+        {11pt}% <space above>
+        {11pt}% <space below>
+        {}% <body font> 使用默认正文字体
+        {}% <indent amount>
+        {\bfseries}% <theorem head font> 设置标题项为加粗
+        {：\\ \indent}% <punctuation after theorem head>
+        {0pt}% <space after theorem head>
+        {\textbf{#3}}% 设置标题内容顺序
+    \theoremstyle{MySubsubsectionStyle} % 应用自定义的定理样式
+    \newtheorem{definition}{}
+
+
+% 有色文本框及其设置
+\usepackage[dvipsnames,svgnames]{xcolor}    %设置插入的文本框颜色
+\usepackage[strict]{changepage}     % 提供一个 adjustwidth 环境
+\usepackage{framed}     % 实现方框效果
+    \definecolor{graybox_color}{rgb}{0.95,0.95,0.96} % 文本框颜色。修改此行中的 rgb 数值即可改变方框纹颜色，具体颜色的rgb数值可以在网站https://colordrop.io/ 中获得。（截止目前的尝试还没有成功过，感觉单位不一样）（找到喜欢的颜色，点击下方的小眼睛，找到rgb值，复制修改即可）
+    \newenvironment{graybox}{%
+    \def\FrameCommand{%
+    \hspace{1pt}%
+    {\color{gray}\small \vrule width 2pt}%
+    {\color{graybox_color}\vrule width 4pt}%
+    \colorbox{graybox_color}%
+    }%
+    \MakeFramed{\advance\hsize-\width\FrameRestore}%
+    \noindent\hspace{-4.55pt}% disable indenting first paragraph
+    \begin{adjustwidth}{}{7pt}%
+    \vspace{2pt}\vspace{2pt}%
+    }
+    {%
+    \vspace{2pt}\end{adjustwidth}\endMakeFramed%
+    }
+
+% 各级标题自定义设置
+\usepackage{titlesec}   
+    % section标题自定义设置 
+    \titleformat{\section}[hang]{\normalfont\huge\bfseries\centering}{第\,\thesection\,部分}{20pt}{}
+    % subsection标题自定义设置 
+    \titleformat{\subsection}[hang]{\normalfont\Large\bfseries}{\,\thesubsection\,}{8pt}{}
+    % subsubsection标题自定义设置
+    \titleformat{\subsubsection}[hang]{\normalfont\large\bfseries}{\,\thesubsubsection\,}{6pt}{}
+
+% 外源代码插入设置
+\usepackage{matlab-prettifier}
+    \lstset{
+        style=Matlab-editor,  % 继承matlab代码颜色等
+    }
+\usepackage[most]{tcolorbox} % 引入tcolorbox包 
+\usepackage{listings} % 引入listings包
+    \tcbuselibrary{listings, skins, breakable}
+    \lstdefinestyle{matlabstyle}{
+        language=Matlab,
+        basicstyle=\small,
+        breakatwhitespace=false,
+        breaklines=true,
+        captionpos=b,
+        keepspaces=true,
+        numbers=left,
+        numbersep=15pt,
+        showspaces=false,
+        showstringspaces=false,
+        showtabs=false,
+        tabsize=2
+    }
+    \newtcblisting{matlablisting}{
+        arc=0pt,
+        top=0pt,
+        bottom=0pt,
+        left=1mm,
+        listing only,
+        listing style=matlabstyle,
+        breakable,
+        colback=white   % 选一个合适的颜色
+    }
+
+% table 支持
+\usepackage{booktabs}   % 宏包：三线表
+\usepackage{tabularray} % 宏包：表格排版
+\usepackage{longtable}  % 宏包：长表格
+\usepackage{tabularx}  % 宏包：宽表格
+\usepackage{multirow}  % 宏包：表格中一格显示多个项目
+
+% figure 设置
+\usepackage{graphicx}  % 支持 jpg, png, eps, pdf 图片 
+\usepackage{svg}       % 支持 svg 图片
+    \svgsetup{
+        % 指向 inkscape.exe 的路径
+        inkscapeexe = C:/aa_MySame/inkscape/bin/inkscape.exe, 
+        % 一定程度上修复导入后图片文字溢出几何图形的问题
+        inkscapelatex = false                 
+    }
+
+
+% 图表进阶设置
+\usepackage{float}     % 图表位置浮动设置 
+\usepackage{caption}    % 图注、表注
+    \captionsetup[figure]{name=图}  
+    \captionsetup[table]{name=表}
+    \captionsetup{labelfont=bf, font=small}
+
+% 文章默认字体设置
+    \usepackage{fontspec}   % 宏包：字体设置
+       \setmainfont{SimSun}    % 设置中文字体为宋体字体
+      \setCJKmainfont[AutoFakeBold=3]{SimSun} % 设置加粗字体为 SimSun 族，AutoFakeBold 可以调整字体粗细^     \setmainfont{Times New Roman} % 设置英文字体为Times New Roman
+
+
+% 其它设置
+    % equation 公式编号设置
+        \makeatletter  
+        \renewcommand{\theequation}{\thesection.\arabic{equation}}  
+        \makeatother
+    % 脚注设置
+        \renewcommand\thefootnote{\ding{\numexpr171+\value{footnote}}}
+    % 参考文献引用设置
+        \bibliographystyle{unsrt}   % 设置参考文献引用格式为unsrt
+        \newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}     % 自定义上角标式引用
+    % 文章序言设置
+        \newcommand{\cnabstractname}{序言}
+        \newenvironment{cnabstract}{%
+            \par\Large
+            \noindent\mbox{}\hfill{\bfseries \cnabstractname}\hfill\mbox{}\par
+            \vskip 2.5ex
+            }{\par\vskip 2.5ex}
+
+
+% 页眉页脚设置
+\usepackage{fancyhdr}   %宏包：页眉页脚设置
+    \pagestyle{fancy}
+    \fancyhf{}
+    \cfoot{\thepage}
+    \renewcommand\headrulewidth{1pt}
+    \renewcommand\footrulewidth{0pt}
+    \rhead{\bfseries 分组序号: YK04-2-3}    
+    \chead{《基础物理实验》实验报告,\ 韩初晓,\ 2023K8009908002}
+    \lhead{2024.10.17}
+
+% 文档信息设置
+%\title{这里是标题\\The Title of the Report}
+%\author{丁毅\\ \footnotesize 中国科学院大学，北京 100049\\ Yi Ding \\ %\footnotesize University of Chinese Academy of Sciences, Beijing %100049, China}
+%\date{\footnotesize 2024.8 -- 2025.1}
+
+% 开始编辑文章
+
+\begin{document}
+\noindent\begin{flushright}
+    \zihao{2}{分组序号: YK04-2-3}
+\end{flushright}
+
+\setCJKfamilyfont{boldsong}[AutoFakeBold = {2.17}]{SimSun}
+\newcommand*{\boldsong}{\CJKfamily{boldsong}}
+
+
+\begin{center}\large
+    \noindent{\Huge\bfseries\boldsong《基础物理实验》实验报告 }
+    \\\vspace{0.4cm}
+    \noindent\textit{
+        \textbf{\boldsong 实验名称：}\uline{\hspace{1.7cm}微波布拉格衍射\hspace{1.7cm}}\hspace{0.4cm} 
+        指导教师：\uline{\hspace{1.0cm}岳帅鹏\hspace{1.0cm}}}
+    \\\vspace{0.1cm}
+    \noindent\textit{
+        姓名：\uline{\,\,\,韩初晓\,\,\,}\hspace{0.2cm}
+        学号：\uline{\,\,\,{\upshape 2023K8009908002}\,\,\,}\hspace{0.2cm}
+        专业：\uline{\,\,\,计算机科学与技术\,\,\,}\hspace{0.2cm}
+        班级：\uline{\,\,\,\upshape{2306}\,\,\,}}
+    \\\vspace{0.1cm}
+    \noindent\textit{
+        实验日期：\uline{\,\,{\upshape 2024.10.17}\,\,}\hspace{0.2cm}
+        实验地点：\uline{\,\,\,教学楼{\upshape717}\,\,\,}\hspace{0.2cm}
+        是否调课/补课：\uline{\hspace{0.5cm}否\hspace{0.5cm}}\hspace{0.2cm}
+        成绩：\uline{\hspace{2cm}}}
+\end{center}
+% \vspace{-0.2cm}
+\noindent\rule{\textwidth}{0.1em}   % 分割线
+
+% 控制目录不换页
+\vspace{1cm}
+\setcounter{tocdepth}{2}  % 目录深度为 2（不显示 subsubsection）
+\noindent\begin{minipage}{\textwidth}\centering
+\tableofcontents\thispagestyle{fancy}   % 显示页码、页眉等   
+\end{minipage}  
+\newpage
+
+\section{实验题目}\thispagestyle{fancy} 
+微波布拉格衍射实验
+
+\section{目的要求}
+\begin{enumerate}
+    \item 了解与学习微波产生的基本原理以及传播和接收等基本特性。
+    \item 观测微波衍射、干涉等实验现象。
+    \item 观测模拟晶体的微波布拉格衍射现象。
+    \item 通过迈克尔逊实验测量微波波长。
+\end{enumerate}
+
+\section{仪器用具}
+DHMS-1 型微波光学综合实验仪，包括以下组件：
+
+\begin{itemize}
+    \item X 波段微波信号源
+    \item 微波发生器
+    \item 发射喇叭
+    \item 接收喇叭
+    \item 微波检波器
+    \item 检波信号数字显示器
+    \item 可旋转载物平台和支架
+    \item 实验附件：反射板、分束板、单缝板、双缝板、晶体模型、读数机构等
+\end{itemize}
+
+\section{实验原理}
+\subsection{微波单缝衍射实验原理}
+当微波通过与其波长相当的狭缝时，会发生衍射现象。根据单缝衍射的理论，微波的衍射图样中央零级最强，中央两侧的衍射强度迅速减弱。微波单缝衍射的强度分布满足以下公式：
+
+\[
+I = I_0 \left( \frac{\sin\mu}{\mu} \right)^2
+\]
+其中，$\mu = \frac{\pi \alpha \sin \varphi}{\lambda}$，$\alpha$ 是狭缝宽度，$\lambda$ 是微波波长，$\varphi$ 是衍射角度。
+
+当满足条件：
+\[
+\alpha \sin \varphi = \pm \kappa \lambda \quad \kappa = 1, 2, 3, 4 \ldots
+\]
+时，相应的$\varphi$角度处的衍射强度为零。利用此公式可以求出微波的波长$\lambda$。
+
+\subsection{微波双缝干涉实验原理}
+当一平面波垂直入射到一金属板的两条狭缝上时，两缝发出的次级波是相干波，因此在金属板后面的空间中将产生干涉现象。当然，波通过每个狭缝时还会发生衍射，因此该实验是衍射和干涉的结合。
+
+为了主要研究两缝中央衍射波相互干涉的结果，设定双缝的缝宽 $\alpha$ 接近波长 $\lambda$，例如：$\lambda = 3.2 \, \text{cm}$，$\alpha = 4 \, \text{cm}$。当两缝之间的间隔 $b$ 较大时，干涉强度受单缝衍射的影响较小；当 $b$ 较小时，干涉强度受单缝衍射影响较大。
+
+干涉加强的角度为：
+\[
+\sin \varphi = \left( \frac{k \lambda}{b + \alpha} \right), \quad k = 1, 2, 3, \ldots
+\]
+式中，$\varphi$ 是干涉加强的角度，$\lambda$ 是波长，$b$ 是两缝之间的间隔，$\alpha$ 是狭缝宽度。
+
+干涉减弱的角度为：
+\[
+\sin \varphi = \left( \frac{\left( 2k + 1 \right) \lambda}{2(b + \alpha)} \right), \quad k = 1, 2, 3, \ldots
+\]
+
+\subsection{迈克尔逊干涉实验原理}
+在迈克尔逊干涉实验中，微波通过一个与传播方向成$45^\circ$角的半透半反射的分束板，分成两束，一束反射至金属板A，另一束反射至金属板B。两束波经过反射后再次会合并在接收器处发生干涉。干涉的强弱取决于两波的程差。通过调节金属板的距离，可以通过观察极小值的位置变化测量微波的波长，满足条件：
+
+\[
+\lambda = \frac{2L}{n}
+\]
+其中，$L$ 是反射板的移动距离，$n$ 是极小值的次数。
+
+\subsection{微波偏振实验原理}
+微波是横波，电场矢量 $E$ 垂直于传播方向。当微波通过一个方向固定的接收器时，接收的信号强度与接收器与微波电场方向的夹角有关，符合马吕斯定律：
+\[
+I = I_0 \cos^2 \alpha
+\]
+其中，$I_0$ 为入射波强度，$\alpha$ 为微波电场方向与接收器方向的夹角。
+
+\subsection{微波布拉格衍射实验原理}
+布拉格衍射是一种当电磁波（例如微波或 X 射线）入射到晶体时，由晶体内原子形成的规则晶面排列所引起的衍射现象。该现象可以通过布拉格定律描述，当波在晶体的相邻晶面上发生反射时，反射波之间的程差为 $2d\sin\theta$，其中 $d$ 是晶面间距，$\theta$ 是入射角。
+
+布拉格定律公式如下：
+\[
+2d\sin\theta = k\lambda \quad (k = 1, 2, 3, \ldots)
+\]
+其中：
+\begin{itemize}
+    \item $d$ 为相邻晶面的间距，
+    \item $\theta$ 为入射波与晶面的夹角，
+    \item $\lambda$ 为入射波的波长，
+    \item $k$ 为衍射级数。
+\end{itemize}
+
+在本实验中，用微波代替 X 射线，使用人工晶体模型模拟真实晶体。通过调整入射角的余角 $\beta$ 并观察衍射极大的方向，可以根据布拉格定律计算出微波波长 $\lambda$。
+
+
+\section{实验内容}
+\subsection{微波单缝干涉}
+\subsubsection{实验步骤及测量方法}
+\begin{itemize}
+    \item 调整单缝衍射板的缝宽。
+    \item 转动载物台，使 180° 刻线与发射臂的指针一致。
+    \item 将单缝衍射板放置在载物台上，使狭缝所在平面与入射方向垂直，并用弹簧压片将单缝底座固定在载物台上。
+    \item 转动接收臂，使指针指向载物台的 0° 刻线。
+    \item 打开振荡器电源，调节衰减器，使接收电表的指示在 100-150mV 之间。
+    \item 转动接收臂，每隔 2° 记录一次接收信号的大小。
+    \item 找到衍射极小位置。当接收臂接近衍射极小处时，增大发射信号进行精扫。
+\end{itemize}
+\subsubsection{现象，变化规律及其解释}
+\begin{itemize}
+  \item \textbf{实验现象：}自$\theta = 0$向外，接收器接收到的电压先急剧降低，在 20° 附近达到极小值，在角度为 34° 时再次出现一小峰。
+  \item \textbf{现象的解释：}当微波通过与其波长相当的狭缝时，会发生衍射现象。根据单缝衍射的理论，微波的衍射图样中央零级最强，中央两侧的衍射强度迅速减弱。 
+\end{itemize}
+
+\subsection{微波的双缝干涉}
+\subsubsection{实验步骤及测量方法}
+\begin{itemize}
+    \item 调整双缝干涉板的缝宽。
+    \item 将双缝干涉板安置在支座上，双缝板平面与载物圆台上的 90° 指示线一致。
+    \item 转动载物台，使发射臂的指针在小平台的 180° 处，微波从双缝干涉板法线方向入射。
+    \item 将接受臂置于小平台的 0° 处，调整信号使液晶显示器显示较大。
+    \item 在 0° 线的两侧，每改变 2 度读取一次液晶显示器的读数，并记录下来。
+    \item 根据记录的数据，绘制双缝干涉强度与角度的关系曲线。
+    \item 在曲线对应的一级极大、零级极小、一级极小处开展间隔 1° 的精细扫描。
+    \item 根据微波衍射强度的一级极大、零级极小、一级极小的角度和缝宽 $\alpha$，计算微波波长 $\lambda$ 和其百分误差。
+\end{itemize}
+\subsubsection{现象，变化规律及其解释}
+\begin{itemize}
+    \item \textbf{实验现象：}从$\theta = 0$的中心处向外，探测器探测到的电压值先降低后升高后降低，依次出现零级亮纹（$+4^\circ$），零级暗纹($+12^\circ, -10^\circ$)，一级亮纹($\pm 22^\circ$)，一级暗纹($\pm 34^\circ$)。
+    \item \textbf{现象的解释：}当一平面波垂直入射到一金属板的两条狭缝上时，两缝发出的次级波是相干波，因此在金属板后面的空间中将产生干涉现象，在特定的角度出现加强和减弱。
+\end{itemize}
+
+\subsection{迈克尔逊干涉实验}
+\subsubsection{实验步骤及测量方法}
+\begin{itemize}
+    \item 在微波前进的方向上放置一玻璃板，使玻璃板面与载物圆台 45º 线在统一面上。
+    \item 固定臂指针指向 90°刻度线，接收臂指针指向 0°刻度线。
+    \item 按实验要求安置固定反射板、可移动反射板、接收喇叭。
+    \item 将固定反射板固定在大平台上，并确保其法线与接收喇叭的轴线一致。
+    \item 将可移动反射板装在旋转读数机构上。
+    \item 移动旋转读数机构上的手柄，使可移动反射板移动，测出 $n+1$ 个微波极小值。
+    \item 同时从读数机构上读出可移动反射板的移动距离 $L$（注意：旋转手柄要慢，并注意回程差的影响）。
+    \item 使用公式：$\lambda = \frac{2L}{n}$计算出波长，与理论值进行比较。
+\end{itemize}
+\subsubsection{现象，变化规律及其解释}
+\begin{itemize}
+  \item \textbf{实验现象：}随着反射板的移动，接收器的度数存在周期性变化。在刻度尺读数 5.95cm，4.35cm，2.75cm，1.05cm 时，接收器接收到的电压强度达到最小值（接近零）。
+  \item \textbf{现象的解释：}两束波经过反射后在接收器处发生干涉。干涉的强弱取决于两波的程差。在满足如下条件的距离处达到强度的最小值：
+
+\[
+\lambda = \frac{2L}{n}
+\]
+
+\end{itemize}
+
+\subsection{微波偏振实验}
+\subsubsection{实验步骤及测量方法}
+\begin{itemize}
+    \item 按实验要求调整喇叭口面，使其相互平行并正对共轴。
+    \item 调整信号，使显示器接近满度。
+    \item 旋转接收喇叭短波导的轴承环（相当于偏转接收器方向），每隔 10° 记录检流计的读数，直至 90°。
+    \item 记录到的读数将得到一组微波强度与偏振角度的关系数据，以验证马吕斯定律。
+    \item 注意，在实验过程中应尽量减少周围环境的影响。
+\end{itemize}
+\subsubsection{现象，变化规律及其解释}
+\begin{itemize}
+    \item \textbf{实验现象：}在角度为零时接收器接收到的电压强度最强，随着角度的增加，接收到的电压强度逐渐降低，达到九十度时。电压强度完全降为零。
+    \item \textbf{实验现象的解释：}当微波通过一个方向固定的接收器时，接收的信号强度与接收器与微波电场方向的夹角有关，符合马吕斯定律：
+\[
+I = I_0 \cos^2 \alpha
+\]
+其中，$I_0$ 为入射波强度，$\alpha$ 为微波电场方向与接收器方向的夹角。
+
+\end{itemize}
+
+\subsection{布拉格衍射}
+\subsubsection{实验步骤及测量方法}
+\begin{itemize}
+    \item 将模拟晶体架插在载物平台上的四颗螺拄上，使所研究的晶面（100）法线正对小平台上的 0°线。
+    \item 固定臂指针对准一侧的 0°线，接收臂指针对准另一侧 180°线。
+    \item 顺时针转动载物台一定刻度（如 30°），此时固定臂指针指向负方向 30°，即入射角为负方向 30°。
+    \item 同时将接收臂顺时针转动到正方向 30°，使得入射角和发射角相等且关于晶面法向量对称，均为 30°。
+    \item 实验时每隔 2° 记录一次，在估计发生衍射极大处可适当增加测试点。
+    \item 为了避免两喇叭之间波的直接入射，入射角 $\beta$ 的取值范围最好在 30° 到 80° 之间，寻找一级衍射最大。
+    \item 根据已知的晶格常数 $a$ 和微波波长 $\lambda$，计算（100）面和（110）面衍射极大的入射角 $\beta$。
+    \item 测量估算值附近的入射角 $\beta$，并满足入射角等于反射角的条件，记录衍射强度 $I$ 的关系曲线。
+    \item 将衍射极大的入射角与理论结果进行比较、分析与讨论。
+    \item 通过布拉格衍射测量结果和晶格常数 $a$，计算微波波长 $\lambda$，并与已知微波波长进行比较与讨论。
+\end{itemize}
+\subsubsection{现象，变化规律及其解释}
+\begin{itemize}
+  \item \textbf{实验现象：}在测量(100)晶面时，自$30^\circ$开始，随着入射角度的增大，接收器接收到的电压的变化并不明显，基本处于6mV以下，在角度增大到$68^\circ$左右时，接收器接收到的电压达到最大值（108.9mV）。角度进一步增大时，接收到的电压再次回到较低水平。在测量(110)晶面时，自$30^\circ$开始，随着入射角度的增大，接收器接收到的电压的变化并不明显，基本处于0.1mV左右，在角度增大到$59^\circ$左右时，接收器接收到的电压达到最大值（38.9mV）。
+  \item \textbf{实验现象的解释：}波在晶体的相邻晶面上发生反射时，反射波之间的程差为 $2d\sin\theta$，其中 $d$ 是晶面间距，$\theta$ 是入射角。当程差等于$k\lambda$时达到极大值。
+\end{itemize}
+
+\section{数据表格}
+\subsection{微波单缝衍射实验}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|*{9}{X|}} % 设置10列的表格
+        \hline
+        \(\theta\)(°)     & 0  & 2  & 4  & 6  & 8  & 10 & 12 & 14 & 16 \\ % 添加单位
+        \hline
+        \(U_\theta^+\)(mV) & 69.5 & 77.3 & 83.0 & 60.9 & 32.5 & 23.0 & 15.1 & 6.6 & 3.2 \\ % 添加单位
+        \hline
+        \(U_\theta^-\)(mV) & 69.5 & 64.5 & 64.0 & 59.2 & 43.2 & 23.8 & 14.4 & 8.0 & 2.9 \\ % 添加单位
+        \hline
+        \(\theta\)(°)     & 18  & 20  & 22  & 24  & 26  & 28  & 30  & 32  & 34 \\ % 添加单位
+        \hline
+        \(U_\theta^+\)(mV) & 1.1  & 0.3  & 0.0  & 0.0  & 0.0  & 0.0  & 0.0  & 0.3  & 0.6 \\ % 添加单位
+        \hline
+        \(U_\theta^-\)(mV) & 0.8  & 0.1  & 0.0  & 0.0  & 0.0  & 0.1  & 0.2  & 0.6  & 0.7 \\ % 添加单位
+        \hline
+        \(\theta\)(°)     & 36  & 38  & 40  &   &   &   &   &   &   \\ % 添加单位
+        \hline
+        \(U_\theta^+\)(mV) & 0.4  & 0.1  & 0.1  &   &   &   &   &   &   \\ % 添加单位
+        \hline
+        \(U_\theta^-\)(mV) & 0.2  & 0.0  & 0.2  &   &   &   &   &   &   \\ % 添加单位
+        \hline
+    \end{tabularx}
+    \caption{单缝衍射实验数据}
+    \label{单缝衍射实验数据表}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|*{9}{X|}} % 设置9列的表格
+        \hline
+        \(\theta\)(°) & 21  & 22  & 23  & 24  & 25  & 26  & 27  & 28  & 29 \\ % 添加单位
+        \hline
+        \(U_\theta^+\)(mV) & 0.6 & 0.1 & 0.0 & 0.0 & 0.1 & 0.2 & 0.1 & 0.1 & 0.1 \\ % 添加单位
+        \hline
+        \(\theta\)(°) & 21  & 22  & 23  & 24  & 25  & 26  & 27  & 28  & 29 \\ % 添加单位
+        \hline
+        \(U_\theta^-\)(mV) & 0.2 & 0.0 & 0.0 & 0.1 & 0.2 & 0.2 & 0.3 & 0.5 & 1.9 \\ % 添加单位
+        \hline
+    \end{tabularx}
+    \caption{实验数据在极小值附近的细扫}
+    \label{实验数据在极小值附近的细扫表}
+\end{table}
+
+\subsection{双缝干涉实验}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|*{9}{X|}} % 设置9列的表格
+        \hline
+        \(\theta\)(°) & 0  & 2  & 4  & 6  & 8  & 10 & 12 & 14 & 16 \\ % 修改单位格式
+        \hline
+        \(U_\theta^+\)(mV) & 24.3 & 35.5 & 26.7 & 19.5 & 3.4 & 0.2 & 0.1 & 0.8 & 2.8 \\ % 修改单位格式
+        \hline
+        \(U_\theta^-\)(mV) & 24.3 & 22.5 & 16.9 & 7.8 & 1.3 & 0.1 & 0.4 & 1.3 & 3.9 \\ % 修改单位格式
+        \hline
+        \(\theta\)(°) & 18 & 20 & 22 & 24 & 26 & 28 & 30 & 32 & 34 \\ % 修改单位格式
+        \hline
+        \(U_\theta^+\)(mV) & 11.9 & 20.4 & 25.1 & 21.0 & 9.8 & 2.3 & 0.9 & 0.6 & 0.4 \\ % 修改单位格式
+        \hline
+        \(U_\theta^-\)(mV) & 13.4 & 24.5 & 27.5 & 17.4 & 6.2 & 1.7 & 0.9 & 0.8 & 0.8 \\ % 修改单位格式
+        \hline
+        \(\theta\)(°) & 36 & 38 & 40 & 42 & 44 & 46 & 48 & 50 & \\ % 修改单位格式
+        \hline
+        \(U_\theta^+\)(mV) & 0.6 & 1.2 & 1.1 & 0.5 & 0.3 & 2.0 & 6.2 & 4.0 & \\ % 修改单位格式
+        \hline
+        \(U_\theta^-\)(mV) & 1.5 & 1.5 & 0.7 & 0.3 & 1.0 & 3.9 & 4.7 & 1.2 & \\ % 修改单位格式
+        \hline
+    \end{tabularx}
+    \caption{双缝干涉实验}
+    \label{双缝干涉实验表}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|*{11}{X|}} % 设置12列的表格
+        \hline
+        \(\theta\)(°) & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 \\ % 添加单位
+        \hline
+        \(U_\theta^+\)(mV) & 5.7 & 11.0 & 15.3 & 20.1 & 23.1 & 25.0 & 24.8 & 22.0 & 17.2 & 10.5 & 5.8 \\ % 添加单位
+        \hline
+        \(\theta\)(°) & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 \\ % 添加单位
+        \hline
+        \(U_\theta^-\)(mV) & 6.5 & 13.3 & 19.5 & 24.6 & 25.0 & 27.1 & 24.0 & 16.1 & 10.9 & 5.7 & 2.8 \\ % 添加单位
+        \hline
+    \end{tabularx}
+    \caption{双缝干涉实验的一级极大精扫结果} % Caption 放在 label 上方
+    \label{双缝干涉实验的一级极大精扫结果表} % Label
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|*{9}{X|}} % 设置11列的表格
+        \hline
+        \(\theta\)(°) & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 \\ % 添加单位
+        \hline
+        \(U_\theta^+\)(mV) & 22.3 & 2.6 & 0.5 & 0.1 & 0.4 & 1.3 & 3.1 & 7.1 & 15.3 \\ % 添加单位
+        \hline
+        \(\theta\)(°) & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 \\ % 添加单位
+        \hline
+        \(U_\theta^-\)(mV) & 7.1 & 2.0 & 0.4 & 0.5 & 1.5 & 3.5 & 7.3 & 15.0 & 24.1 \\ % 添加单位
+        \hline
+    \end{tabularx}
+    \caption{双缝干涉实验的零级极小精扫结果} % Caption 放在 label 上方
+    \label{双缝干涉实验的零级极小精扫结果表} % Label
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|*{9}{X|}} % 设置11列的表格
+        \hline
+        \(\theta\)(°) & 30 & 31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 \\ % 添加单位
+        \hline
+        \(U_\theta^+\)(mV) & 5.5 & 3.8 & 2.8 & 2.1 & 1.7 & 2.0 & 2.3 & 4.4 & 6.7 \\ % 添加单位
+        \hline
+        \(\theta\)(°) & 29 & 30 & 31 & 32 & 33 & 34 & 35 & 36 & 37 \\ % 添加单位
+        \hline
+        \(U_\theta^-\)(mV) & 7.2 & 4.4 & 3.8 & 3.7 & 4.4 & 5.0 & 7.6 & 9.6 & 10.4 \\ % 添加单位
+        \hline
+    \end{tabularx}
+    \caption{双缝干涉实验的一级极小精扫结果} % Caption 放在 label 上方
+    \label{双缝干涉实验的一级极小精扫结果表} % Label
+\end{table}
+
+\subsection{微波迈克尔逊干涉实验}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|*{4}{X|}} % 设置5列的表格
+        \hline
+        最小点读数（cm） & 5.95 & 4.35 & 2.75 & 1.05 \\ % 添加单位
+        \hline
+    \end{tabularx}
+    \caption{迈克尔逊干涉实验最小点读数记录表} % Caption 放在 label 上方
+    \label{迈克尔逊干涉实验最小点读数记录表} % Label
+\end{table}
+
+\subsection{微波布拉格衍射实验}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|*{9}{X|}} % 设置10列的表格
+        \hline
+        \(\phi_I\)(°) & 30 & 32 & 34 & 36 & 38 & 40 & 42 & 44 & 46 \\ % 第一组数据
+        \hline
+        \(U\)(mV) & 1.8 & 1.8 & 1.7 & 2.1 & 3.6 & 6.4 & 3.3 & 0.5 & 0.9 \\ % 第一组数据的电压值
+        \hline
+        \(\phi_I\)(°) & 48 & 50 & 52 & 54 & 56 & 58 & 60 & 62 & 64 \\ % 第二组数据
+        \hline
+        \(U\)(mV) & 5.0 & 6.2 & 0.5 & 0.7 & 1.1 & 0.5 & 12.0 & 21.4 & 8.8 \\ % 第二组数据的电压值
+        \hline
+        \(\phi_I\)(°) & 66 & 68 & 70 & 72 & 74 & 76 & 78 & 80 & \\ % 第三组数据
+        \hline
+        \(U\)(mV) & 69.0 & 109.2 & 13.3 & 0.99 & 6.5 & 6.4 & 1.0 & 18.0 & \\ % 第三组数据的电压值
+        \hline
+    \end{tabularx}
+    \caption{微波布拉格衍射实验（100晶面）} % 表格标题
+    \label{微波布拉格衍射实验（100晶面）表} % Label
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|*{9}{X|}} % 设置10列的表格
+        \hline
+        \(\phi_I\)(°) & 62 & 63 & 64 & 65 & 66 & 67 & 68 & 69 & 70 \\ % 角度数据
+        \hline
+        \(U\)(mV) & 20.1 & 5.8 & 5.5 & 34.2 & 68.6 & 89.2 & 108.9 & 64.3 & 13.1 \\ % 电压数据
+        \hline
+    \end{tabularx}
+    \caption{（100）晶面在极大附近的精扫} % 表格标题
+    \label{（100）晶面在极大附近的精扫表} % Label
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|*{9}{X|}} % 设置10列的表格
+        \hline
+        \(\phi_I\)(°) & 30 & 32 & 34 & 36 & 38 & 40 & 42 & 44 & 46 \\ % 第一行角度数据
+        \hline
+        \(U\)(mV) & 0.0 & 0.1 & 0.1 & 0.1 & 0.0 & 0.1 & 0.0 & 0.1 & 0.3 \\ % 第一行电压数据
+        \hline
+        \(\phi_I\)(°) & 48 & 50 & 52 & 54 & 56 & 58 & 60 & 62 & 64 \\ % 第二行角度数据
+        \hline
+        \(U\)(mV) & 0.3 & 0.8 & 2.1 & 4.4 & 3.9 & 5.6 & 3.1 & 0.1 & 0.6 \\ % 第二行电压数据
+        \hline
+        \(\phi_I\)(°) & 66 & 68 & 70 &  &  &  &  &  &  \\ % 第三行角度数据
+        \hline
+        \(U\)(mV) & 0.0 & 0.0 & 0.0 &  &  &  &  &  &  \\ % 第三行电压数据
+        \hline
+    \end{tabularx}
+    \caption{微波布拉格衍射实验（110晶面）} % 表格标题
+    \label{微波布拉格衍射实验（110晶面）表} % Label
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|c|*{10}{X|}} % 设置11列的表格
+    \hline
+    \(\phi_I\)(°) & 52 & 53 & 54 & 55 & 56 & 57 & 58 & 59 & 60 & 61 \\
+    \hline
+    \(U\)(mV) & 14.7 & 23.2 & 29.2 & 30.3 & 26.8 & 30.5 & 38.4 & 38.9 & 20.8 & 3.8 \\
+    \hline
+\end{tabularx}
+\caption{（110）晶面在极大附近的精扫}
+\label{（110）晶面在极大附近的精扫表}
+\end{table}
+
+\subsection{微波的偏振实验}
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|c|*{10}{X|}} % 设置11列的表格
+    \hline
+    转角(°)   & 0   & 10   & 20   & 30   & 40   & 50   & 60   & 70   & 80   & 90   \\
+    \hline
+    \(U\)(mV) & 150.2 & 148.9 & 134.1 & 110.8 & 80.2 & 50.1 & 22.3 & 4.3 & 0.3 & 0.0 \\
+    \hline
+\end{tabularx}
+\caption{偏振实验数据}
+\label{偏振实验数据表}
+\end{table}
+
+\section{数据处理及结果}
+见手写pdf文件
+
+\section{思考与讨论}
+\subsection*{1. 各实验内容误差主要影响是什么？}
+实验中的误差主要来源于以下几个方面：
+\begin{itemize}
+    \item 仪器不精确：接受探头只能读到小数点后一位；在做迈克尔逊干涉实验时刻度尺的读书有很大误差。
+    \item 外界干扰：实验过程中，手机蓝牙无线网络等信号干扰实验，进而影响实验结果。
+    \item 人为操作误差：例如在测数据的过程中碰歪了探头的位置等。
+    \item 微波信号不稳定：在实验过程中尽管没有外界扰动，接收器接收到的信号也很难维持在稳定值。
+\end{itemize}
+
+\subsection*{2. 金属是一种良好的微波反射器。其它物质的反射特性如何？是否有部分能量透过这些物质还是被吸收了？比较导体与非导体的反射特性。}
+金属是一种良好的微波反射器，微波在金属表面几乎完全反射。其它物质的反射特性取决于其电导率和介电常数：
+\begin{itemize}
+    \item 金属等导体完全反射微波，能量几乎不透过，也很少被吸收。（这就是为什么用微波炉加热食品的时候不能采用金属容器，而应当采用玻璃或陶瓷容器）
+    \item 非导体：非导体的反射特性较弱，大部分微波能量会透过或被材料吸收。高介电常数的非导体会反射更多的微波，而低介电常数的材料透过性较好。
+\end{itemize}
+
+\subsection*{3. 为避免每台仪器微波间的干扰，使用吸波材料对每套设备进行了微波屏蔽，请问吸波材料的工作机理是什么？与屏蔽微波波长的关系是什么？}
+吸波材料的工作机理是通过将微波的电磁能量转化为热能，从而减少反射和传输的能量。吸波材料通常由具有高损耗因子的材料制成，可以有效吸收特定频率范围内的电磁波。吸波效果与材料的厚度、微波波长有直接关系。当吸波材料的厚度接近微波波长的四分之一时，吸收效果最佳。
+
+\subsection*{4. 假如预先不知道晶体中晶面的方向，是否会增加实验的复杂性？又该如何定位这些晶面？}
+会增加实验的复杂性。不知道镜面的方向就无法知道布拉格衍射公式中的角度，由此难以找到正确的入射角来观察衍射现象。定位晶面的方法有：
+\begin{itemize}
+    \item 旋转晶体：通过旋转晶体并观测衍射图样的变化，确定不同晶面的位置。
+    \item 使用多晶样品：多晶样品包含大量取向不同的晶面，可以通过分析其衍射图样来定位晶面。
+    \item X射线或电子衍射技术：通过X射线的图样和电子衍射图样定位晶面。
+\end{itemize}
+
+\end{document}
+
+% VScode 常用快捷键：
+
+% F2:                       变量重命名
+% Ctrl + Enter:             行中换行
+% Alt + up/down:            上下移行
+% 鼠标中键 + 移动:           快速多光标
+% Shift + Alt + up/down:    上下复制
+% Ctrl + left/right:        左右跳单词
+% Ctrl + Backspace/Delete:  左右删单词    
+% Shift + Delete:           删除此行
+% Ctrl + J:                 打开 VScode 下栏(输出栏)
+% Ctrl + B:                 打开 VScode 左栏(目录栏)
+% Ctrl + `:                 打开 VScode 终端栏
+% Ctrl + 0:                 定位文件
+% Ctrl + Tab:               切换已打开的文件(切标签)
+% Ctrl + Shift + P:         打开全局命令(设置)
+
+% Latex 常用快捷键：
+
+% Ctrl + Alt + J:           由代码定位到PDF
+
+

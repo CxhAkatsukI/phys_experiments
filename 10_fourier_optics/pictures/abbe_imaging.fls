@@ -1,0 +1,6 @@
+PWD /home/cxh/Documents/phys_experiments/10_fourier_optics/pictures
+INPUT /usr/local/texlive/2024/texmf.cnf
+INPUT /usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt
+INPUT abbe_imaging.tex
+OUTPUT abbe_imaging.log

@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}用示波器观测动态磁滞回线}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}实验内容}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}观测样品1（铁氧体）的饱和动态磁滞回线}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}测量样品1（铁氧体）的动态磁化曲线}{2}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}观察不同频率下样品2（硅钢）的动态磁滞回线}{2}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}测量样品1（铁氧体）在不同直流偏置磁场 $H$ 下的可逆磁导率}{3}{subsubsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.2}数据整理和计算}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}绘图}{5}{subsection.1.3}%
+\contentsline {section}{\numberline {2}用霍尔传感器测量铁磁材料的准静态磁滞回线}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}实验内容}{8}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}测量样品的起始磁化曲线}{8}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}测量模具钢的磁滞回线}{8}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}数据整理与计算}{9}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}测量样品的起始磁化曲线}{9}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}测量模具钢的磁滞回线}{9}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}绘图}{11}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}测量样品的起始磁化曲线}{11}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}测量模具钢的磁滞回线}{11}{subsubsection.2.3.2}%
+\contentsline {section}{\numberline {3}思考题与实验心得}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}思考题}{12}{subsection.3.1}%

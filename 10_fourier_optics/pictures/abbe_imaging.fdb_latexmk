@@ -1,0 +1,17 @@
+# Fdb version 4
+["xdvipdfmx"] 1730270840.95107 "abbe_imaging.xdv" "abbe_imaging.pdf" "abbe_imaging" 1730271077.87137 0
+  "abbe_imaging.xdv" 1730270840.8965 13628 af9344a7b3220b9407cfb8e260c62813 "xelatex"
+  (generated)
+  "abbe_imaging.pdf"
+  (rewritten before read)
+["xelatex"] 1730271262.98359 "abbe_imaging.tex" "abbe_imaging.xdv" "abbe_imaging" 1730271263.15771 2
+  "/usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf" 1727217670 42021 a58d36c7ede3d2fc9f93da62d691ddff ""
+  "/usr/local/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1728637992 5862908 7453e7615df9bdeb964c832c25ebd134 ""
+  "/usr/local/texlive/2024/texmf.cnf" 1728637912.42825 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
+  "abbe_imaging.aux" 1730271262.17644 2393 c34aa091681c653e9c0a5f11bf290f76 "xelatex"
+  "abbe_imaging.tex" 1730271259.86644 13035 900f5260c7187b91be368c0d5c8f6d8c ""
+  (generated)
+  "abbe_imaging.aux"
+  "abbe_imaging.log"
+  "abbe_imaging.xdv"
+  (rewritten before read)

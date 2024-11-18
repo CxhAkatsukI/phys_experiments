@@ -1,0 +1,63 @@
+
+\documentclass[a4paper,10pt]{article}
+\usepackage{amsmath}
+\usepackage{ctex} % 中文支持
+\usepackage{geometry}
+
+% 设置页边距
+\geometry{top=1in, bottom=1in, left=1in, right=1in}
+
+% 页眉设置
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{实验预习报告} % 左侧页眉内容
+\fancyhead[C]{杨氏模量实验} % 中间页眉内容
+\fancyhead[R]{韩初晓} % 右侧页眉内容，可以填写你的名字
+\fancyfoot[C]{\thepage} % 页脚中间显示页码
+
+% 正文开始
+\begin{document}
+
+\title{杨氏模量实验预习报告} % 标题
+\author{韩初晓} % 作者名
+\date{\today} % 日期，使用当前日期
+\maketitle % 生成标题
+
+% 下面是正文内容
+\newpage
+\section{实验目的}
+\begin{enumerate}
+    \item 了解静态和动态方法测量杨氏模量。
+    \item 学习使用霍尔传感器、光杠杆法、读数显微镜、显微镜等实验设备。
+    \item 学习误差分析方法，如图示法和最小二乘法处理实验数据。
+    \item 学习使用外延法处理实验数据。
+    \item 了解换能器的功能，熟悉测试仪器及示波器的使用。
+\end{enumerate}
+
+% 你可以继续在这里添加其他部分，如实验原理、设备与材料、实验步骤等。
+
+
+\section{杨氏模量的公式}
+杨氏模量 \(Y\) 定义为正应力与线应变的比例系数：
+\[ Y = \frac{F \cdot L}{S \cdot \Delta L} \]
+其中，\(F\) 是施加的力（N），\(L\) 是材料的原始长度（m），\(S\) 是材料的横截面积（m\(^2\)），\(\Delta L\) 是材料在力的作用下发生的伸长量（m）。
+
+\section{微小长度测量的几种方法}
+- \textbf{螺旋测微器}：精度低于读数显微镜。
+- \textbf{读数显微镜}：用于测量微小位移，最小分辨率有0.005mm。
+- \textbf{CCD成像系统}：通过高分辨率摄像头捕捉微小位移，可以测量非常细微的变化。
+
+\section{拉伸法、霍尔法、动态悬挂法测量杨氏模量}
+- \textbf{拉伸法测量杨氏模量}：拉伸法通过测量金属丝在受到外力作用后的伸长量来计算杨氏模量。实验中，金属丝的杨氏模量 $Y$ 可以通过以下公式计算：
+\[ Y = \frac{4F \cdot L}{\pi \cdot d^2 \cdot \Delta L} \]
+其中，$F$ 是施加的外力（单位：N），$L$ 是金属丝的原始长度（单位：m），$d$ 是金属丝的直径（单位：m），$\Delta L$ 是金属丝在受力后的伸长量（单位：m）。
+
+- \textbf{霍尔法}：利用霍尔效应测量位移，通过测量霍尔电压的变化来间接测量位移。霍尔电压与位移成正比。
+  \[ \Delta U_H = K \cdot I \cdot \frac{dB}{dz} \cdot \Delta z \]
+  其中，\(K\) 是霍尔系数，\(I\) 是通过霍尔元件的电流，\(\frac{dB}{dz}\) 是磁场梯度，\(\Delta z\) 是位移。
+
+- \textbf{动态悬挂法测量杨氏模量}：动态悬挂法通过测量金属棒在基频振动时的共振频率来计算杨氏模量。实验中，金属棒的杨氏模量 $Y$ 可以通过以下公式计算：
+\[ Y = 1.6067 \left( \frac{L^3 \cdot m \cdot f_1^2}{d^4} \right) \]
+其中，$L$ 是金属棒的长度（单位：m），$m$ 是金属棒的质量（单位：kg），$f_1$ 是金属棒在基频振动时的共振频率（单位：Hz），$d$ 是金属棒的直径（单位：m）。
+
+\end{document}

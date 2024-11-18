@@ -1,0 +1,264 @@
+
+\documentclass[a4paper,10pt]{article}
+\usepackage{amsmath}
+\usepackage{ctex} % 中文支持
+\usepackage{geometry}
+\usepackage{float}
+
+% 设置页边距
+\geometry{top=1in, bottom=1in, left=1in, right=1in}
+
+% 页眉设置
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{实验预习报告} % 左侧页眉内容
+\fancyhead[C]{磁场测量实验预习报告} % 中间页眉内容
+\fancyhead[R]{韩初晓} % 右侧页眉内容，可以填写你的名字
+\fancyfoot[C]{\thepage} % 页脚中间显示页码
+
+% 正文开始
+\begin{document}
+
+\title{磁场测量实验预习报告} % 标题
+\author{韩初晓} % 作者名
+\date{\today} % 日期，使用当前日期
+\maketitle % 生成标题
+
+% 下面是正文内容
+\newpage
+
+\section{实验相关问题}
+\begin{enumerate}
+  \item 在本实验中地磁场能否忽略？地磁场的存在会给实验结果造成何种影响？
+  \item 为什么在测量磁感应强度时，要求探测线圈的法线与磁感应强度方向夹角为 0 度？该步骤对实验结果有何影响？
+  \item 为什么亥姆霍兹线圈在线圈距离等于半径时磁感应强度最均匀？
+  \item 为什么在亥姆霍兹线圈实验中要使用交流电源，并且频率设定为 120 Hz？
+  \item 在亥姆霍兹线圈实验中，如何验证其轴线方向上的磁感应强度分布与理论计算一致？
+  \item 为什么金属材料不适宜作为霍尔元件？
+\end{enumerate}
+
+\section{实验仪器}
+
+\subsection{霍尔效应试验仪}
+
+\begin{table}[H]
+\centering
+\caption{DH4512D 霍尔效应实验仪}
+\begin{tabular}{|c|l|}
+\hline
+\textbf{编号} & \textbf{功能} \\ \hline
+1 & 电磁铁励磁电流 \(I_m\) 输入 A（与测试仪对应 \(I_m\) 输入相连） \\ \hline
+2 & 电磁铁励磁电流 \(I_m\) 输入 B（与测试仪对应 \(I_m\) 输入相连） \\ \hline
+3 & 电磁铁线圈（内部已连接到电磁铁线圈，无需再连接） \\ \hline
+4 & 霍尔工作电流 \(I_s\) 输入 A（与测试仪对应 \(I_s\) 输入相连） \\ \hline
+5 & 霍尔工作电流 \(I_s\) 输入 B（与测试仪对应 \(I_s\) 输入相连） \\ \hline
+6 & 霍尔电压输出 \(V_H\) +（与测试仪对应 \(V_H\) 输入相连） \\ \hline
+7 & 霍尔电压输出 \(V_H\) -（与测试仪对应 \(V_H\) 输入相连） \\ \hline
+8 & 控制电源输入（确保电源正常工作，用于打开与关闭仪器） \\ \hline
+9 & 探头座（可转换接触方式，用于固定传感器） \\ \hline
+10 & 霍尔传感器插座（用于插入霍尔传感器） \\ \hline
+11 & 霍尔传感器接头（用于与霍尔传感器相连） \\ \hline
+12 & 霍尔传感器连接器（用于将信号传递到仪器检测系统） \\ \hline
+13 & 霍尔元件引脚插座（霍尔元件接口，四线输出：\(I_s+\)，\(I_s-\)，\(V_H+\)，\(V_H-\)） \\ \hline
+14 & 霍尔传感器插座（与测量仪表相连） \\ \hline
+15 & 可移动部件，微调霍尔元件在电磁铁间隙中的位置 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{DH4512D 霍尔效应实验仪面板}
+\begin{tabular}{|c|l|}
+\hline
+\textbf{编号} & \textbf{功能} \\ \hline
+1 & 霍尔传感器位置显示 \\ \hline
+2 & 磁场计调零位置 \\ \hline
+3 & 霍尔传感器接口 \\ \hline
+4 & \(I_m\) 励磁电流显示 \\ \hline
+5 & \(I_m\) 励磁电流调节位置 \\ \hline
+6 & \(I_m\) 励磁电流输出接口 \\ \hline
+7 & \(I_s\) 霍尔工作电流显示 \\ \hline
+8 & \(I_s\) 霍尔工作电流调节位置 \\ \hline
+9 & \(I_s\) 霍尔工作电流输出接口 \\ \hline
+10 & \(V_H\) 霍尔电压显示 \\ \hline
+11 & \(V_H\) 霍尔电压输入接口 \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{亥姆霍兹线圈}
+
+\begin{table}[H]
+\centering
+\caption{DH4501 亥姆霍兹磁线圈磁感应强度测量仪器}
+\begin{tabular}{|c|l|}
+\hline
+\textbf{项目} & \textbf{技术参数} \\ \hline
+1.1 & \textbf{亥姆霍兹磁线圈架} \\ \hline
+& \quad - 线圈有效半径：105 mm \\ \hline
+& \quad - 单个线圈匝数：400 匝 \\ \hline
+& \quad - 二线圈中心间距：105 mm \\ \hline
+& \quad - 移动装置：轴向可移动距离 250 mm，径向可移动距离 70 mm \\ \hline
+& \quad - 距离分辨率：1 mm \\ \hline
+& \quad - 探测线圈：匝数 1000，旋转角度 360 度 \\ \hline
+1.2 & \textbf{磁感应强度测量仪} \\ \hline
+& \quad - 频率范围：20 - 200 Hz，频率分辨率：0.1 Hz，测量误差：0.1\% \\ \hline
+& \quad - 正弦波：输出电压幅度：最大 20 V\textsubscript{p-p}，输出电流幅度：最大 200 mA \\ \hline
+& \quad - 数显毫伏表电压测量范围：0 - 20 mV，测量误差：1\% \\ \hline
+1.3 & \textbf{电源} \\ \hline
+& \quad - 220 V ± 10\% \\ \hline
+1.4 & \textbf{外形尺寸} \\ \hline
+& \quad - 亥姆霍兹磁线圈架：340 mm × 270 mm × 250 mm \\ \hline
+& \quad - 磁感应强度测量试仪：320 mm × 300 mm × 120 mm \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+
+\section{利用霍尔效应试验仪测量磁感应强度实验原理}
+
+\subsection{霍尔效应}
+霍尔效应是带电粒子在磁场中受洛仑兹力作用而发生偏转的现象。当带电粒子在导体或半导体中运动时，垂直于电流和磁场的方向上会产生电荷积累，形成横向电场。设定磁场 \( B \) 沿 \( Z \)-轴正方向，电流 \( I_s \) 沿 \( X \)-轴正方向，载流子为电子（N型半导体），它们在洛仑兹力作用下沿 \( y \)-轴负方向偏转。
+
+当电荷积累达到平衡时，霍尔电场 \( E_H \) 会建立，导致霍尔电势 \( V_H \) 产生。根据洛仑兹力和电场力平衡条件，有：
+\[
+v B = \frac{V_H}{l}
+\]
+其中，\( v \) 为电子漂移速度，\( l \) 为霍尔元件宽度。
+
+霍尔电势与工作电流 \( I_s \) 和磁感应强度 \( B \) 之间的关系为：
+\[
+V_H = \frac{I_s}{n e d} B
+\]
+其中，\( n \) 为载流子浓度，\( e \) 为电子电荷，\( d \) 为霍尔元件的厚度。
+
+\subsection{测量原理}
+在实验中，将霍尔元件放置于待测磁场中，并通过恒定的工作电流 \( I_s \) 输入，测量其两端的霍尔电势 \( V_H \)。根据霍尔元件的灵敏度 \( K_H \) 和工作电流 \( I_s \)，可以计算出磁感应强度 \( B \)：
+\[
+V_H = K_H I_s B
+\]
+
+\section{利用亥姆霍兹线圈测量磁感应强度实验原理}
+
+
+\subsection{单个圆线圈的磁感应强度}
+对半径为 \( R \)、电流为 \( I \) 的圆线圈，在轴线上任意一点的磁感应强度 \( B \) 可表示为：
+\[
+B = \frac{\mu_0 N_0 I R^2}{2 (R^2 + X^2)^{3/2}}
+\]
+其中，\( N_0 \) 为线圈匝数，\( X \) 为轴线上某一点到圆心 \( O \) 的距离，\( \mu_0 = 4\pi \times 10^{-7} \, \text{H/m} \)。
+
+\subsection{亥姆霍兹线圈的磁感应强度}
+对于两个平行且共轴的圆线圈，匝数均为 \( N_0 \)、半径为 \( R \)、电流为 \( I \)，并且两线圈间的距离等于半径 \( R \)，其轴线上某点的磁感应强度 \( B \) 可表示为：
+\[
+B = \frac{\mu_0 N_0 I}{2R} \left[ \frac{1}{\left(1 + \frac{X}{R}\right)^{3/2}} + \frac{1}{\left(1 - \frac{X}{R}\right)^{3/2}} \right]
+\]
+在中心 \( O \) 处，即 \( X = 0 \) 时，磁感应强度为：
+\[
+B = \frac{\mu_0 N_0 I}{2R} \cdot \frac{16}{5^{3/2}} = 1.43 \times \frac{\mu_0 N_0 I}{R}
+\]
+
+实验中取 \( N_0 = 400 \) 匝，\( R = 105 \, \text{mm} \)，\( f = 120 \, \text{Hz} \)，\( I = 60 \, \text{mA} \)（有效值），则在中心 \( O \) 处亥姆霍兹线圈的磁感应强度为：
+\[
+B = 2.05 \, \text{mT}
+\]
+\section{电磁感应法测量磁感应强度原理}
+
+\subsection{电磁感应法测量磁感应强度}
+对于交流信号驱动的线圈，产生的磁感应强度 \( B \) 的瞬时值为：
+\[
+B = B_m \sin \omega t
+\]
+其中，\( B_m \) 为磁感应强度的峰值，\( \omega \) 为角频率。线圈中某探测线圈的磁通量为：
+\[
+\Phi = NS B_m \cos \theta \sin \omega t
+\]
+其中，\( N \) 为探测线圈匝数，\( S \) 为线圈的截面积，\( \theta \) 为线圈法线与磁感应强度方向的夹角。由法拉第电磁感应定律，感应电动势为：
+\[
+\varepsilon = -\frac{d \Phi}{dt} = -NS \omega B_m \cos \theta \cos \omega t = \varepsilon_m \cos \omega t
+\]
+其中 \( \varepsilon_m = NS \omega B_m \cos \theta \)。当 \( \theta = 0 \) 时，感应电动势的有效值 \( U_{\text{max}} \) 为：
+\[
+B_m = \frac{\varepsilon_m}{NS \omega} \sqrt{2} U_{\text{max}}
+\]
+
+\subsection{探测线圈设计}
+探测线圈需选择合适的匝数与尺寸，以保证灵敏度和均匀性。实验中采用内径 \( D = 0.012 \, \text{m} \)、匝数 \( N = 800 \) 的线圈。线圈内磁感应强度的等效面积 \( S \) 为：
+\[
+S = \frac{10}{13} \pi D^2
+\]
+测得的交流电压有效值 \( U_{\text{max}} \) 可用于计算中心处的磁感应强度 \( B \)：
+\[
+B = \frac{54}{13 \pi^2 N D f} U_{\text{max}}
+\]
+
+在本实验中，取 \( D = 0.012 \, \text{m} \)、\( N = 1000 \) 匝、\( f = 120 \, \text{Hz} \)、电流 \( I = 60 \, \text{mA} \) 时，若测得交流伏安表读数为 \( 5.95 \, \text{mV} \)，可得磁感应强度 \( B = 0.145 \, \text{mT} \)。
+
+\section{实验步骤}
+
+\subsection{利用霍尔效应实验仪测量磁感应强度}
+
+\begin{enumerate}
+    \item 正确连接电路。由于励磁电流与工作电流量级差异较大，必须正确连接电路，否则霍尔元件可能因电流过大而烧毁。
+    \item 测量霍尔电压 \( V_H \) 与工作电流 \( I_S \) 之间的关系。
+    \begin{enumerate}
+        \item 转动旋钮，将霍尔元件移动至电磁铁中间位置。
+        \item 将测试仪上的励磁电流和工作电流归零，对毫特计调零。
+        \item 将励磁电流设为 200 mA，逐步增加工作电流，从 0 mA 开始，每增加 0.5 mA 记录一次电压数据（测量 \( V_1 \sim V_4 \)），直至 3 mA。由此计算出 \( V_H \)，并绘制 \( I_S - V_H \) 曲线，验证实验结果。
+    \end{enumerate}
+    \item 测量霍尔电压 \( V_H \) 与磁感应强度的关系，以及磁感应强度与励磁电流 \( I_M \) 之间的关系。
+    \begin{enumerate}
+        \item 完成调零后，将工作电流设为 1 mA。
+        \item 励磁电流从 0 开始，每增加 50 mA 记录一次霍尔电压和磁感应强度数据，直至 500 mA。其他操作与上一步类似。
+    \end{enumerate}
+    \item 计算霍尔元件的霍尔灵敏度。
+    \item 测量电磁铁的磁场沿水平方向的分布。
+    \begin{enumerate}
+        \item 在 \( I_M = 0 \) 的情况下，对毫特计调零。
+        \item 设定 \( I_M = 200 \) mA，调整移动尺位置，每隔 2 mm 记录毫特计的读数并记录数据。
+    \end{enumerate}
+    \item 使用交流霍尔电流测量磁场。
+    \begin{enumerate}
+        \item 使用函数发生器代替直流稳压电源，设定频率 \( f = 500 \) Hz，保持 \( I_S = 1 \) mA。
+        \item 将函数发生器接到 1、2 端，使用万用表测量霍尔电压 \( V_H \)。
+        \item 励磁电流从 0.05 A 开始，每增加 0.05 A 记录数据，直至 0.2 A，并绘制 \( B - I_M \) 图。
+    \end{enumerate}
+\end{enumerate}
+
+
+\subsection{亥姆霍兹线圈的磁感应强度测量}
+
+\begin{enumerate}
+    \item 测量圆电流线圈轴线上磁感应强度的分布。
+    \begin{enumerate}
+        \item 连接电源与电路，打开仪器并读取数据，计算出两个线圈的中心及中心中点的位置，完成调零。
+        \item 调节励磁电流至 60 mA，频率为 120 Hz，调整探测线圈使其法线和径向方向均为 0 度。
+        \item 移动探测线圈，以线圈中心为原点，在励磁电流保持不变、探测线圈方向与圆电流线圈轴线夹角为 0 度的情况下，每隔 5 mm 测量一个 \( U_{\text{max}} \) 值。
+    \end{enumerate}
+
+    \item 测量亥姆霍兹线圈轴线上磁感应强度的分布。
+    \begin{enumerate}
+        \item 连接电路并清零磁感应强度，将实验仪的两个线圈串联连接到励磁电流的两端。
+        \item 在 120 Hz、励磁电流有效值 60 mA 的条件下，以线圈中心为原点，每隔 5 mm 测量一个 \( U_{\text{max}} \) 值。
+    \end{enumerate}
+
+    \item 测量亥姆霍兹线圈沿径向的磁感应强度分布。
+    \begin{enumerate}
+        \item 固定探测线圈的方向，移动手轮，每隔 5 mm 记录一个数据，沿正负方向测量到边缘，记录数据并绘制磁感应强度分布曲线。
+    \end{enumerate}
+
+    \item 验证公式 \( \varepsilon_m = NS\omega B_m \cos \theta \)。
+    \begin{enumerate}
+        \item 使夹角从 0 度开始，每次增加 10 度，旋转一周，验证余弦关系。
+    \end{enumerate}
+
+    \item 研究励磁电流大小对磁感应强度的影响。
+    \begin{enumerate}
+        \item 固定探测线圈，在夹角保持为 0 度的情况下，调节磁感应强度测试仪输出的电流频率。
+        \item 从 20 Hz 开始，每次增加 10 Hz 直至 120 Hz，测量电动势并分析影响。
+    \end{enumerate}
+\end{enumerate}
+
+
+
+\end{document}
