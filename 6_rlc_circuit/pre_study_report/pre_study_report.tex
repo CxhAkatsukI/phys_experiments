@@ -1,0 +1,298 @@
+
+\documentclass[a4paper,10pt]{article}
+\usepackage{amsmath}
+\usepackage{ctex} % 中文支持
+\usepackage{geometry}
+\usepackage{float}
+
+% 设置页边距
+\geometry{top=1in, bottom=1in, left=1in, right=1in}
+
+% 页眉设置
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{实验预习报告} % 左侧页眉内容
+\fancyhead[C]{} % 中间页眉内容
+\fancyhead[R]{韩初晓} % 右侧页眉内容，可以填写你的名字
+\fancyfoot[C]{\thepage} % 页脚中间显示页码
+
+% 正文开始
+\begin{document}
+
+\title{RLC谐振电路预习报告} % 标题
+\author{韩初晓} % 作者名
+\date{\today} % 日期，使用当前日期
+\maketitle % 生成标题
+
+% 下面是正文内容
+\newpage
+
+\section{实验目的}
+\begin{enumerate}
+    \item 研究 RLC 电路的谐振现象。
+    \item 了解 RLC 电路的相频特性和幅频特性。
+    \item 用数字存储示波器观察 RLC 串联电路的暂态过程，理解阻尼振动规律。
+\end{enumerate}
+
+\section{实验原理}
+
+\subsection{串联RLC电路的基本特性}
+
+串联RLC电路由电阻\( R \)、电感\( L \)和电容\( C \)组成，其总阻抗\( Z \)可以表示为：
+\[
+Z = \sqrt{R^2 + \left(\omega L - \frac{1}{\omega C}\right)^2}
+\]
+其中，\( \omega = 2\pi f \)为角频率，\( f \)为频率。
+
+电压\( u \)与电流\( i \)之间的相位差\( \phi \)由下式给出：
+\[
+\tan \phi = \frac{\omega L - \frac{1}{\omega C}}{R}
+\]
+因此，相位差为：
+\[
+\phi = \arctan\left(\frac{\omega L - \frac{1}{\omega C}}{R}\right)
+\]
+
+电流\( i \)与电压\( u \)的关系为：
+\[
+i = \frac{u}{Z} = \frac{u}{\sqrt{R^2 + \left(\omega L - \frac{1}{\omega C}\right)^2}}
+\]
+
+\subsection{频率特性分析}
+
+\subsubsection{阻抗随频率变化}
+
+随着频率\( f \)的变化，阻抗\( Z \)呈现以下特性：
+\[
+Z = R \quad \text{当} \quad \omega L = \frac{1}{\omega C}
+\]
+即当：
+\[
+\omega_0 = \frac{1}{\sqrt{LC}} \quad \text{或} \quad f_0 = \frac{1}{2\pi\sqrt{LC}}
+\]
+时，电路达到谐振状态，此时阻抗最小，为纯电阻性：
+\[
+Z_{\text{谐振}} = R
+\]
+
+\subsubsection{相位差随频率变化}
+
+相位差\( \phi \)的变化特性为：
+\begin{itemize}
+    \item 当\( f < f_0 \)时，\( \phi > 0 \)，电路呈电容性，电流相位超前于电压。
+    \item 当\( f > f_0 \)时，\( \phi < 0 \)，电路呈电感性，电流相位落后于电压。
+    \item 当\( f = f_0 \)时，\( \phi = 0 \)，电压与电流同相，电路呈纯电阻性。
+\end{itemize}
+
+\subsubsection{幅频特性}
+
+在总电压\( u \)保持不变的条件下，电流随频率的变化曲线称为幅频特性曲线。在谐振频率\( f_0 \)处，电流达到最大值：
+\[
+i_{\text{最大}} = \frac{u}{R}
+\]
+
+\subsection{品质因数 \( Q \) }
+
+品质因数\( Q \)定义为：
+\[
+Q = \frac{\omega_0 L}{R} = \frac{1}{\omega_0 R C}
+\]
+它反映了电路的储能和耗能特性：
+\begin{itemize}
+    \item \( Q \)值越大，电路的储能效率越高，耗能越小。
+    \item 在谐振时，电感和电容上的电压均为总电压的\( Q \)倍，表现为电压谐振。
+    \item \( Q \)值决定了电路的频率选择性，\( Q \)值越大，带宽越窄，频率选择性越好：
+    \[
+    \Delta f = \frac{f_0}{Q}
+    \]
+\end{itemize}
+
+\subsection{串联谐振现象}
+
+当电路达到谐振频率\( f_0 \)时，电感\( L \)和电容\( C \)的反应相互抵消，电路表现为纯电阻性，阻抗达到最小值\( Z = R \)，电流达到最大值\( i = \frac{u}{R} \)。此状态称为串联谐振，具有以下特点：
+\begin{itemize}
+    \item 电压与电流同相，\( \phi = 0 \)。
+    \item 阻抗最小，电流最大。
+    \item 电路表现为纯电阻性质。
+\end{itemize}
+
+\subsection{并联RLC电路的基本特性}
+
+RLC并联电路由电阻\( R \)、电感\( L \)和电容\( C \)并联组成。其总阻抗\( |Z_p| \)、电压\( u \)与电流\( i \)之间的相位差\( \varphi \)关系如下：
+
+\begin{equation}
+|Z_p| = \sqrt{\frac{R^2 + (\omega L)^2}{(1 - \omega^2 LC)^2 + (\omega CR)^2}}
+\end{equation}
+
+\begin{equation}
+\varphi = \arctan \left( \frac{\omega L - \omega C (R^2 + (\omega L)^2)}{R} \right)
+\end{equation}
+
+\begin{equation}
+u = i |Z_p| = \frac{u_R}{R} |Z_p|
+\end{equation}
+
+\subsection{并联谐振条件}
+
+当相位差\( \varphi = 0 \)时，电流与电压同相，电路呈纯电阻性，发生谐振。由相位差公式可得并联谐振的角频率\( \omega_p \)（或并联谐振频率\( f_p \)）为：
+
+\begin{equation}
+\omega_p = \sqrt{\frac{1}{LC} - \left(\frac{R}{2L}\right)^2} \approx \omega_0 \quad \text{当} \quad Q \gg 1
+\end{equation}
+
+\begin{equation}
+f_p = \frac{\omega_p}{2\pi} \approx \frac{1}{2\pi\sqrt{LC}} = f_0
+\end{equation}
+
+其中，谐振角频率\( \omega_0 = \frac{1}{\sqrt{LC}} \)，品质因数\( Q \)定义为：
+
+\begin{equation}
+Q = \frac{\omega_0 L}{R} = \frac{\sqrt{L/C}}{R}
+\end{equation}
+
+\subsection{频率特性分析}
+
+\subsubsection{阻抗随频率变化}
+
+并联RLC电路的阻抗\( |Z_p| \)随频率\( f \)变化。在谐振频率\( f_p \)处，总阻抗达到最大值，电流达到最小值；当频率偏离\( f_p \)时，阻抗减小，电流增大。
+
+\subsubsection{相位差随频率变化}
+
+\begin{itemize}
+    \item 当\( f < f_p \)时，\( \varphi < 0 \)，电流相位落后于电压，电路呈电感性。
+    \item 当\( f > f_p \)时，\( \varphi > 0 \)，电流相位超前于电压，电路呈电容性。
+    \item 当\( f = f_p \)时，\( \varphi = 0 \)，电压与电流同相，电路呈纯电阻性。
+\end{itemize}
+
+\subsubsection{幅频特性}
+
+在总电流\( i \)保持不变的条件下，电压\( u \)随频率\( f \)变化。在谐振频率\( f_p \)处，电压达到最大值。
+
+\subsection{品质因数\( Q \) }
+
+品质因数\( Q \)反映了电路的储能与耗能特性，其定义为：
+
+\begin{equation}
+Q = \frac{\omega_0 L}{R} = \frac{1}{\omega_0 R C}
+\end{equation}
+
+\begin{equation}
+\Delta f = \frac{f_p}{Q}
+\end{equation}
+
+其中，\( \Delta f \)为通频带宽度，\( Q \)值越大，带宽越窄，频率选择性越好。
+
+\subsection{并联谐振现象}
+
+当电路达到谐振频率\( f_p \)时，电感\( L \)和电容\( C \)的反应相互抵消，电路表现为纯电阻性，阻抗达到最大值，电流达到最小值。此状态称为并联谐振，具有以下特点：
+\begin{itemize}
+    \item 电压与电流同相，\( \varphi = 0 \)。
+    \item 阻抗最大，电流最小。
+    \item 电路表现为纯电阻性质。
+\end{itemize}
+
+在谐振时，电流在并联支路中的电感和电容上的电流分别为总电流的\( Q \)倍，称为电流谐振。
+
+\subsection{RLC电路的暂态过程}
+
+RLC电路由电阻\( R \)、电感\( L \)和电容\( C \)组成。在放电过程中，开关首先使电容充电至电压\( E \)，然后切换到放电位置，使电容在闭合电路中放电。电路方程为：
+
+\[
+L \frac{di}{dt} + Ri + u_C = 0
+\]
+
+将\( i = C \frac{du_C}{dt} \)代入，得到：
+
+\[
+LC \frac{d^2u_C}{dt^2} + RC \frac{du_C}{dt} + u_C = 0
+\]
+
+根据初始条件\( t = 0 \)、\( u_C = E \)、\( \frac{du_C}{dt} = 0 \)，方程的解分为三种情况：
+
+\begin{enumerate}
+    \item 当\( R^2 < 4L/C \)时，属于欠阻尼状态。引入阻尼系数\( \zeta = \frac{R}{2} \sqrt{\frac{C}{L}} \)，此时\( \zeta < 1 \)。电容电压的解为：
+
+    \[
+    u_C = \sqrt{\frac{4L}{4L - R^2C}} \, E \, e^{-t/\tau} \cos(\omega t + \varphi)
+    \]
+
+    其中，时间常量为：
+
+    \[
+    \tau = \frac{2L}{R}
+    \]
+
+    衰减振动的角频率为：
+
+    \[
+    \omega = \frac{1}{\sqrt{LC}} \sqrt{1 - \frac{R^2C}{4L}}
+    \]
+
+    此时，\( u_C \) 随时间呈指数衰减的振动，衰减速度由\( \tau \)决定，\( \tau \) 越小，衰减越快。
+
+    \item 当\( R^2 > 4L/C \)时，属于过阻尼状态。电容电压的解为：
+
+    \[
+    u_C = \sqrt{\frac{4L}{R^2C - 4L}} \, E \, e^{-\alpha t} \sinh(\beta t + \varphi)
+    \]
+
+    其中：
+
+    \[
+    \alpha = \frac{R}{2L}, \quad \beta = \sqrt{\frac{R^2C}{4L} - 1}
+    \]
+
+    在过阻尼状态下，\( u_C \) 随时间呈指数衰减但不振荡。
+
+    \item 当\( R^2 = 4L/C \)时，属于临界阻尼状态。电容电压的解为：
+
+    \[
+    u_C = E \left(1 + \frac{t}{\tau}\right) e^{-t/\tau}
+    \]
+
+    其中\( \tau = \frac{2L}{R} \)。这是过阻尼与欠阻尼的分界点，电压迅速达到平衡而不产生振荡。
+\end{enumerate}
+
+对于充电过程，开关切换使电源\( E \)对电容充电，电路方程变为：
+
+\[
+LC \frac{d^2u_C}{dt^2} + RC \frac{du_C}{dt} + u_C = E
+\]
+
+初始条件为\( t = 0 \)时，\( u_C = 0 \)、\( \frac{du_C}{dt} = 0 \)。其解与放电过程类似，仅最终趋向的平衡状态不同：
+
+\begin{enumerate}
+    \item 当\( R^2 < \frac{4L}{C} \)时：
+
+    \[
+    u_C = E \left[1 - \sqrt{\frac{4L}{4L - R^2C}} \, e^{-t/\tau} \cos(\omega t + \varphi)\right]
+    \]
+
+    \item 当\( R^2 > \frac{4L}{C} \)时：
+
+    \[
+    u_C = E \left[1 - \sqrt{\frac{4L}{R^2C - 4L}} \, e^{-\alpha t} \sinh(\beta t + \varphi)\right]
+    \]
+
+    \item 当\( R^2 = \frac{4L}{C} \)时：
+
+    \[
+    u_C = E \left[1 - \left(1 + \frac{t}{\tau}\right) e^{-t/\tau}\right]
+    \]
+\end{enumerate}
+
+可见，充电过程和放电过程在形式上十分相似，区别在于最终趋向的平衡状态不同。
+
+\section{实验注意事项}
+
+\begin{itemize}
+    \item 使用标准电阻将电流波形的测量转换为电阻上的电压波形测量。
+    \item 测量前，确保了解示波器的输入阻抗。
+    \item 实验中使用的函数发生器和示波器均接地，测量时注意电路的共地点位置。
+    \item 限制总电压峰峰值不超过3.0 V或有效值不超过1.0 V，以防止串联谐振时产生危险高电压。
+    \item 测量相位差时，使用示波器的平均值功能时，等待平均值稳定后再读取数据；使用光标功能时，确保精确读取时间间隔。
+    \item 改变频率时，保持函数发生器的输出电压恒定，通过适当增大输出电压以维持总电压。
+    \item 读取电压时，应读取“幅度值”或“顶端值”，避免读取“峰峰值”以减少高频噪音带来的系统误差。
+\end{itemize}
+
+\end{document}
