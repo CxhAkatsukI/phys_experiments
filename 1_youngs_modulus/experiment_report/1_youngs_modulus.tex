@@ -161,6 +161,7 @@
 
 % figure 设置
 \usepackage{graphicx}  % 支持 jpg, png, eps, pdf 图片 
+\usepackage{pdfpages}  % 支持插入 pdf 图片
 \usepackage{svg}       % 支持 svg 图片
     \svgsetup{
         % 指向 inkscape.exe 的路径
@@ -968,6 +969,9 @@ f_\text{固} = f_\text{共} \sqrt{1 + \frac{1}{4Q^2}}
         \item \textbf{关系}：固有频率和共振频率的关系可以用以下公式来表述\[f_\text{固} = f_\text{共} \sqrt{1 + \frac{1}{4Q^2}}\]其中 \(Q\) 为机械品质因素。通常 \(Q \approx 50\)，则两者差异约为 0.005\%，由于这个差异非常小，因此在本实验中用共振频率近似代替固有频率。
     \end{itemize}
 \end{enumerate}
+
+\section{原始数据记录表}
+\includepdf[pages=-]{./韩初晓-测量金属的杨氏模量-数据.pdf}
 
 \end{document}
 

@@ -161,6 +161,7 @@
 
 % figure 设置
 \usepackage{graphicx}  % 支持 jpg, png, eps, pdf 图片 
+\usepackage{pdfpages}  % 支持插入 pdf 图片
 \usepackage{subcaption}    % 支持子图
 \usepackage{svg}       % 支持 svg 图片
     \svgsetup{
@@ -212,7 +213,7 @@
     \renewcommand\footrulewidth{0pt}
     \rhead{\bfseries 分组序号: YK04-2}    
     \chead{《基础物理实验》实验报告,\ 韩初晓,\ 2023K8009908002}
-    \lhead{2024.10.10}
+    \lhead{2024.12.12}
 
 % 文档信息设置
 %\title{这里是标题\\The Title of the Report}
@@ -244,7 +245,7 @@
         班级：\uline{\,\,\,\upshape{2306}\,\,\,}}
     \\\vspace{0.1cm}
     \noindent\textit{
-        实验日期：\uline{\,\,{\upshape 2024.10.10}\,\,}\hspace{0.2cm}
+        实验日期：\uline{\,\,{\upshape 2024.12.12}\,\,}\hspace{0.2cm}
         实验地点：\uline{\,\,\,教学楼{\upshape709}\,\,\,}\hspace{0.2cm}
         是否调课/补课：\uline{\hspace{0.5cm}否\hspace{0.5cm}}\hspace{0.2cm}
         成绩：\uline{\hspace{2cm}}}
@@ -781,6 +782,9 @@ LC \frac{d^2u_C}{dt^2} + RC \frac{du_C}{dt} + u_C = E
 
 \section{参考资料}
 本实验报告有适当参考讲义及圣遗物。
+
+\section{原始数据记录表}
+\includepdf[pages=-]{./韩初晓- RLC谐振电路-数据.pdf}
 
 \end{document}
 

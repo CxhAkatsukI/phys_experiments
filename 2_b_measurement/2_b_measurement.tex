@@ -161,6 +161,7 @@
 
 % figure 设置
 \usepackage{graphicx}  % 支持 jpg, png, eps, pdf 图片 
+\usepackage{pdfpages}  % 支持插入 pdf 文件
 \usepackage{svg}       % 支持 svg 图片
     \svgsetup{
         % 指向 inkscape.exe 的路径
@@ -1001,6 +1002,9 @@ $U_{max}$ (mV) & 1.45 & 2.16 & 2.89 & 3.61 & 4.33 & 5.05 & 5.76 & 6.48 & 7.21 & 
       \end{enumerate}
     \end{itemize}
 \end{enumerate}
+
+\section{原始数据记录表}
+\includepdf[pages=-]{./韩初晓-磁场的测量-数据.pdf}
 
 \end{document}
 

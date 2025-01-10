@@ -161,6 +161,7 @@
 
 % figure 设置
 \usepackage{graphicx}  % 支持 jpg, png, eps, pdf 图片 
+\usepackage{pdfpages}  % 支持插入 pdf 文件
 \usepackage{svg}       % 支持 svg 图片
     \svgsetup{
         % 指向 inkscape.exe 的路径
@@ -211,7 +212,7 @@
     \renewcommand\footrulewidth{0pt}
     \rhead{\bfseries 分组序号: YK04-2}    
     \chead{《基础物理实验》实验报告,\ 韩初晓,\ 2023K8009908002}
-    \lhead{2024.10.10}
+    \lhead{2024.12.5}
 
 % 文档信息设置
 %\title{这里是标题\\The Title of the Report}
@@ -243,7 +244,7 @@
         班级：\uline{\,\,\,\upshape{2306}\,\,\,}}
     \\\vspace{0.1cm}
     \noindent\textit{
-        实验日期：\uline{\,\,{\upshape 2024.10.10}\,\,}\hspace{0.2cm}
+        实验日期：\uline{\,\,{\upshape 2024.12.5}\,\,}\hspace{0.2cm}
         实验地点：\uline{\,\,\,教学楼{\upshape716}\,\,\,}\hspace{0.2cm}
         是否调课/补课：\uline{\hspace{0.5cm}否\hspace{0.5cm}}\hspace{0.2cm}
         成绩：\uline{\hspace{2cm}}}
@@ -903,6 +904,9 @@ m_0 = \frac{3.57472 \times 2.467}{39.478} - 0.21712 \approx  6.49 \, \text{g}
 
 \textbf{计算结果分析} \\
 计算得到的弹簧有效质量 \( m_0 \approx 6.49 \, \text{g} \) ，这在物理上是合理的，并且与上一部分的推导相吻合。这说明，实验的误差是第三组数据，即第三个数据点或第四个数据点的测量偏差导致的。为了进一步验证这一结果，可以考虑重复实验，增加实验次数，取更多数据点以减小误差。
+
+\section{原始数据记录表}
+\includepdf[pages=-]{./韩初晓-气轨实验-数据.pdf}
 
 \end{document}
 

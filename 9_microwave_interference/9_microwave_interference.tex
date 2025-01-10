@@ -161,6 +161,7 @@
 
 % figure 设置
 \usepackage{graphicx}  % 支持 jpg, png, eps, pdf 图片 
+\usepackage{pdfpages}  % 支持插入 pdf 文件
 \usepackage{svg}       % 支持 svg 图片
     \svgsetup{
         % 指向 inkscape.exe 的路径
@@ -668,7 +669,7 @@ I = I_0 \cos^2 \alpha
 \end{table}
 
 \section{数据处理及结果}
-见手写pdf文件
+\includepdf[pages=-]{./实验9微波干涉手绘图.pdf}
 
 \section{思考与讨论}
 \subsection*{1. 各实验内容误差主要影响是什么？}
@@ -697,6 +698,9 @@ I = I_0 \cos^2 \alpha
     \item 使用多晶样品：多晶样品包含大量取向不同的晶面，可以通过分析其衍射图样来定位晶面。
     \item X射线或电子衍射技术：通过X射线的图样和电子衍射图样定位晶面。
 \end{itemize}
+
+\section{原始数据记录表}
+\includepdf[pages=-]{./韩初晓-微波干涉-数据.pdf}
 
 \end{document}
 
