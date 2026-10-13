@@ -1,0 +1,54 @@
+# LaTeX compilation intermediates (keep report PDFs and figure/data assets)
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.lol
+*.fls
+*.fdb_latexmk
+*.dvi
+*.xdv
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+*.synctex.gz(busy)
+
+# Bibliography, indexes, glossaries, and presentation intermediates
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.idx
+*.ilg
+*.ind
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.acn
+*.acr
+*.alg
+*.nav
+*.snm
+*.vrb
+_minted-*/
+
+# Python bytecode and local virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editor/office temporary files and operating-system metadata
+*.swp
+*.swo
+*~
+.~lock.*#
+~$*
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+*:Zone.Identifier
